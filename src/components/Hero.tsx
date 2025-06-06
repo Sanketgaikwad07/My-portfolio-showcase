@@ -1,4 +1,5 @@
 
+
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
@@ -14,8 +15,12 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center px-4">
       <div className="container mx-auto text-center">
         <div className="animate-fade-in">
-          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-accent to-accent/60 flex items-center justify-center text-6xl font-bold text-accent-foreground">
-            S
+          <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-accent/20">
+            <img 
+              src="https://i.postimg.cc/ryWCPxxy/mypic.jpg" 
+              alt="Sanket Gaikwad"
+              className="w-full h-full object-cover"
+            />
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
@@ -56,3 +61,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
