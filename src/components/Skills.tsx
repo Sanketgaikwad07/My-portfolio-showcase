@@ -5,44 +5,23 @@ const Skills = () => {
     'HTML/CSS', 'Git'
   ];
 
-  const technologies = [
-    'Java', 'Spring Boot', 'MySQL', 'React', 'JavaScript', 'Node.js', 
-    'HTML', 'CSS', 'Bootstrap', 'JWT', 'Redux', 'Axios', 'Postman', 
-    'Figma', 'Git', 'GitHub'
-  ];
-
   return (
     <section id="skills" className="py-20 px-4 bg-secondary/50">
       <div className="container mx-auto">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            Skills & <span className="text-accent">Technologies</span>
+            My <span className="text-accent">Skills</span>
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-8 text-accent">Core Skills</h3>
-              <div className="flex flex-wrap gap-3">
+          <div className="flex justify-center">
+            <div className="max-w-4xl">
+              <div className="flex flex-wrap gap-4 justify-center">
                 {skills.map((skill, index) => (
                   <span 
                     key={index}
-                    className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium hover:border-accent transition-colors cursor-default"
+                    className="px-6 py-3 bg-card border border-border rounded-lg text-lg font-medium hover:border-accent transition-colors cursor-default"
                   >
                     {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-semibold mb-8 text-accent">Technologies</h3>
-              <div className="flex flex-wrap gap-3">
-                {technologies.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium hover:border-accent transition-colors cursor-default"
-                  >
-                    {tech}
                   </span>
                 ))}
               </div>
