@@ -1,7 +1,6 @@
 
-
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -9,6 +8,17 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const downloadCV = () => {
+    // Add your CV file URL here
+    const cvUrl = '/path-to-your-cv.pdf';
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'Sanket_Gaikwad_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -32,7 +42,7 @@ const Hero = () => {
             with modern technologies like Java, Spring Boot, and React.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               onClick={() => scrollToSection('projects')}
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg"
@@ -46,6 +56,22 @@ const Hero = () => {
             >
               About Me
             </Button>
+          </div>
+
+          <div className="mb-16">
+            <div className="bg-card border border-border rounded-lg p-6 max-w-md mx-auto">
+              <h3 className="text-lg font-semibold mb-4 text-accent">Download CV</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Get my complete resume with detailed experience and projects
+              </p>
+              <Button 
+                onClick={downloadCV}
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </Button>
+            </div>
           </div>
           
           <button 
@@ -61,4 +87,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
