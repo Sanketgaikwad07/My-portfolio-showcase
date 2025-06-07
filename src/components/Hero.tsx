@@ -48,11 +48,11 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-md lg:max-w-lg">
+            <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-accent/20">
               <img 
                 src="https://i.postimg.cc/ryWCPxxy/mypic.jpg" 
                 alt="Sanket Gaikwad"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
