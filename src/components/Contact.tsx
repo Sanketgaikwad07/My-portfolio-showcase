@@ -28,14 +28,8 @@ const Contact = () => {
   };
 
   const downloadCV = () => {
-    // Add your CV file URL here
-    const cvUrl = '/path-to-your-cv.pdf';
-    const link = document.createElement('a');
-    link.href = cvUrl;
-    link.download = 'Sanket_Gaikwad_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const cvUrl = 'https://pdf.ac/2mDZVl';
+    window.open(cvUrl, '_blank');
   };
 
   return (
