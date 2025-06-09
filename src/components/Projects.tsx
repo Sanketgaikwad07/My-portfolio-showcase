@@ -23,10 +23,10 @@ const Projects = () => {
       highlights: ['Contract Management', 'Automated Workflows', 'Document Handling', 'Smart Features']
     },
     {
-      title: 'Zose',
-      description: 'E-commerce platform for clothing with complete shopping cart functionality, user authentication, and payment integration.',
-      technologies: ['Java', 'Spring Boot', 'React', 'JavaScript', 'JWT', 'Redux', 'Axios'],
-      highlights: ['E-commerce Platform', 'Shopping Cart', 'JWT Authentication', 'State Management']
+      title: 'Todo App',
+      description: 'A modern task management application with real-time updates, categorization, and priority management features.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Express', 'Socket.io'],
+      highlights: ['Real-time Updates', 'Task Categories', 'Priority Management', 'User Dashboard']
     }
   ];
 

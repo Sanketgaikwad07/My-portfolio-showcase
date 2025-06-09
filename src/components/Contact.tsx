@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -40,8 +41,8 @@ const Contact = () => {
             Get In <span className="text-accent">Touch</span>
           </h2>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-accent">Let's Connect</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -124,7 +125,7 @@ const Contact = () => {
                   <CardTitle className="text-accent">Send a Message</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Name
@@ -167,8 +168,8 @@ const Contact = () => {
                         required
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="bg-background border-border focus:border-accent min-h-[120px]"
-                        placeholder="Tell me about your project or just say hello!"
+                        className="bg-background border-border focus:border-accent min-h-[100px]"
+                        placeholder="Tell me about your project!"
                       />
                     </div>
                     
@@ -183,20 +184,18 @@ const Contact = () => {
               </Card>
 
               <Card className="bg-card border-border">
-                <CardHeader>
-                  <CardTitle className="text-accent">Download CV</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Download my complete resume with detailed experience, projects, and skills.
-                  </p>
-                  <Button 
-                    onClick={downloadCV}
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download CV
-                  </Button>
+                <CardContent className="p-4">
+                  <div className="text-center">
+                    <h4 className="font-semibold text-accent mb-2">Download CV</h4>
+                    <Button 
+                      onClick={downloadCV}
+                      size="sm"
+                      className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      CV
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
