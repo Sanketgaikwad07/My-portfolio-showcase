@@ -126,20 +126,20 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="flex flex-col items-center text-center space-y-8">
-          {/* Profile Picture with enhanced styling */}
-          <div className="relative">
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-accent/50 relative">
+        <div className="flex flex-col items-center text-center space-y-10">
+          {/* Profile Picture with enhanced styling - moved down */}
+          <div className="relative mt-8">
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-accent/50 relative mx-auto">
               <img 
                 src="https://i.postimg.cc/ryWCPxxy/mypic.jpg" 
                 alt="Sanket Gaikwad"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
               {/* Profile picture overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent"></div>
             </div>
             {/* Glowing ring effect */}
-            <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-accent/30 animate-pulse"></div>
+            <div className="absolute inset-0 w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-accent/30 animate-pulse mx-auto"></div>
           </div>
 
           {/* Main content with glass morphism effect */}
