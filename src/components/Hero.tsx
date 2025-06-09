@@ -106,7 +106,7 @@ const Hero = () => {
       </div>
 
       {/* Live Time and Date */}
-      <div className="absolute top-8 right-8 text-right">
+      <div className="absolute top-16 right-8 text-right">
         <div className="text-2xl font-mono text-accent">
           {formatTime(currentTime)}
         </div>
