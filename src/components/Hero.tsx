@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const roles = ['Java Full Stack Developer', 'Backend Engineer', 'Frontend Developer', 'Software Engineer'];
 
   useEffect(() => {
@@ -35,11 +36,37 @@ const Hero = () => {
     return () => clearInterval(typeInterval);
   }, [currentIndex]);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   return (
@@ -76,6 +103,16 @@ const Hero = () => {
           style={{ transform: 'rotate(25deg)' }} 
           size={26} 
         />
+      </div>
+
+      {/* Live Time and Date */}
+      <div className="absolute top-8 right-8 text-right">
+        <div className="text-2xl font-mono text-accent">
+          {formatTime(currentTime)}
+        </div>
+        <div className="text-sm text-muted-foreground mt-1">
+          {formatDate(currentTime)}
+        </div>
       </div>
 
       <div className="container mx-auto relative z-10">
