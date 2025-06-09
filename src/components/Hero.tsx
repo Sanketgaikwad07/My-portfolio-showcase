@@ -71,43 +71,53 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-      {/* Static gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/10"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-accent/8"></div>
-      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-accent/3 to-transparent"></div>
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80)'
+        }}
+      />
       
-      {/* Static tech icons */}
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/85"></div>
+      
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-accent/20"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-accent/15"></div>
+      
+      {/* Animated tech icons */}
       <div className="absolute inset-0 pointer-events-none">
         <Code 
-          className="absolute top-20 left-10 text-accent/30" 
+          className="absolute top-20 left-10 text-accent/40 animate-pulse" 
           style={{ transform: 'rotate(15deg)' }} 
           size={28} 
         />
         <Database 
-          className="absolute top-32 right-16 text-accent/25" 
-          style={{ transform: 'rotate(-10deg)' }} 
+          className="absolute top-32 right-16 text-accent/35 animate-pulse" 
+          style={{ transform: 'rotate(-10deg)', animationDelay: '1s' }} 
           size={24} 
         />
         <Globe 
-          className="absolute bottom-32 left-16 text-accent/35" 
-          style={{ transform: 'rotate(20deg)' }} 
+          className="absolute bottom-32 left-16 text-accent/45 animate-pulse" 
+          style={{ transform: 'rotate(20deg)', animationDelay: '2s' }} 
           size={32} 
         />
         <Sparkles 
-          className="absolute top-1/2 right-32 text-accent/20" 
-          style={{ transform: 'rotate(-15deg)' }} 
+          className="absolute top-1/2 right-32 text-accent/30 animate-pulse" 
+          style={{ transform: 'rotate(-15deg)', animationDelay: '0.5s' }} 
           size={20} 
         />
         <Code 
-          className="absolute bottom-20 right-12 text-accent/25" 
-          style={{ transform: 'rotate(25deg)' }} 
+          className="absolute bottom-20 right-12 text-accent/35 animate-pulse" 
+          style={{ transform: 'rotate(25deg)', animationDelay: '1.5s' }} 
           size={26} 
         />
       </div>
 
-      {/* Live Time and Date */}
-      <div className="absolute top-16 right-8 text-right">
-        <div className="text-2xl font-mono text-accent">
+      {/* Live Time and Date with glass effect */}
+      <div className="absolute top-16 right-8 text-right bg-background/20 backdrop-blur-sm rounded-lg p-4 border border-accent/20">
+        <div className="text-2xl font-mono text-accent font-bold">
           {formatTime(currentTime)}
         </div>
         <div className="text-sm text-muted-foreground mt-1">
@@ -117,25 +127,29 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
-          {/* Profile Picture */}
-          <div>
-            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-accent/30">
+          {/* Profile Picture with enhanced styling */}
+          <div className="relative">
+            <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-accent/50 relative">
               <img 
                 src="https://i.postimg.cc/ryWCPxxy/mypic.jpg" 
                 alt="Sanket Gaikwad"
                 className="w-full h-full object-cover"
               />
+              {/* Profile picture overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent"></div>
             </div>
+            {/* Glowing ring effect */}
+            <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full border-2 border-accent/30 animate-pulse"></div>
           </div>
 
-          {/* Main content */}
-          <div className="space-y-6">
+          {/* Main content with glass morphism effect */}
+          <div className="space-y-6 bg-background/10 backdrop-blur-sm rounded-2xl p-8 border border-accent/20">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               Hi, I'm <span className="text-accent bg-gradient-to-r from-accent to-accent/80 bg-clip-text text-transparent">Sanket</span>
             </h1>
             
             <div className="text-xl md:text-2xl text-muted-foreground h-8">
-              <span className="border-r-2 border-accent">
+              <span className="border-r-2 border-accent animate-pulse">
                 {displayText}
               </span>
             </div>
@@ -148,14 +162,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => scrollToSection('projects')}
-                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg shadow-lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 View My Work
               </Button>
               <Button 
                 onClick={() => scrollToSection('about')}
                 variant="outline" 
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 text-lg"
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-3 text-lg backdrop-blur-sm bg-background/20 hover:scale-105 transition-all duration-300"
               >
                 About Me
               </Button>
@@ -163,7 +177,7 @@ const Hero = () => {
             
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-accent hover:text-accent/80 transition-colors mt-8"
+              className="text-accent hover:text-accent/80 transition-colors mt-8 animate-bounce"
             >
               <ArrowDown size={32} />
             </button>
