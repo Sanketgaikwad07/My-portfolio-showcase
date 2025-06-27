@@ -37,11 +37,10 @@ This project is built with:
 - Tailwind CSS
 
 ## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8d5a8bcb-395d-4838-9eca-a0607528443c) and click on Share -> Publish.
-
+deploy on LOVEBLE its open sourse
 
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+
 
 
