@@ -1,8 +1,18 @@
 
 const SkillsSection = () => {
-  const skills = [
-    'Java', 'Spring Boot', 'MySQL', 'React', 'JavaScript', 'Node.js', 
-    'HTML/CSS', 'Git'
+  const skillCategories = [
+    {
+      title: "Languages & Frameworks",
+      skills: ['Java', 'JavaScript', 'Spring Boot', 'React']
+    },
+    {
+      title: "Databases",
+      skills: ['MySQL', 'PostgreSQL']
+    },
+    {
+      title: "Tools",
+      skills: ['Figma', 'Canva', 'Flowbite', 'Jira', 'AWS (Basic)', 'Postman', 'Render', 'Git', 'GitHub']
+    }
   ];
 
   return (
@@ -13,19 +23,24 @@ const SkillsSection = () => {
             My <span className="text-accent">Skills</span>
           </h2>
           
-          <div className="flex justify-center">
-            <div className="max-w-4xl">
-              <div className="flex flex-wrap gap-4 justify-center">
-                {skills.map((skill, index) => (
-                  <span 
-                    key={index}
-                    className="px-6 py-3 bg-card border border-border rounded-lg text-lg font-medium hover:border-accent transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
+          <div className="space-y-12">
+            {skillCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="text-center">
+                <h3 className="text-2xl font-semibold mb-6 text-accent">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  {category.skills.map((skill, index) => (
+                    <span 
+                      key={index}
+                      className="px-6 py-3 bg-card border border-border rounded-lg text-lg font-medium hover:border-accent transition-colors cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
           
           <div className="mt-12 p-6 bg-card rounded-lg border border-border max-w-4xl mx-auto">
