@@ -1,6 +1,5 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 
 const Projects = () => {
   const projects = [
@@ -75,23 +74,6 @@ const Projects = () => {
                         </span>
                       ))}
                     </div>
-                  </div>
-                  
-                  <div className="flex gap-3 pt-4">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                    >
-                      View Details
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="border-muted-foreground text-muted-foreground hover:bg-muted hover:text-foreground"
-                    >
-                      Source Code
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
