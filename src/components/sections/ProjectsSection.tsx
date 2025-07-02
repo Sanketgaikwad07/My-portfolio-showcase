@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
@@ -57,7 +56,7 @@ const ProjectsSection = () => {
                 <Button 
                   variant="outline" 
                   className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
-                  onClick={() => window.open('https://github.com', '_blank')}
+                  onClick={() => window.open('https://github.com/Sanketgaikwad07', '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   Visit GitHub Profile
