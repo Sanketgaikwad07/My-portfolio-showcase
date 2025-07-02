@@ -1,5 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Github } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -36,6 +38,33 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
             Featured <span className="text-accent">Projects</span>
           </h2>
+          
+          {/* GitHub Section */}
+          <div className="mb-12">
+            <Card className="bg-card border-border hover:border-accent transition-colors text-center">
+              <CardHeader>
+                <div className="flex justify-center mb-4">
+                  <Github className="w-12 h-12 text-accent" />
+                </div>
+                <CardTitle className="text-2xl text-accent">
+                  View All Projects on GitHub
+                </CardTitle>
+                <CardDescription className="text-muted-foreground text-base">
+                  Explore my complete portfolio of projects, including source code, documentation, and contribution history.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button 
+                  variant="outline" 
+                  className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                  onClick={() => window.open('https://github.com', '_blank')}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  Visit GitHub Profile
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
