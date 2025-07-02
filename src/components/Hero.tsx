@@ -127,8 +127,8 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col items-center text-center space-y-10">
-          {/* Profile Picture with enhanced styling - moved down */}
-          <div className="relative mt-8">
+          {/* Profile Picture with enhanced styling - moved further down */}
+          <div className="relative mt-16">
             <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-2xl border-4 border-accent/50 relative mx-auto">
               <img 
                 src="https://i.postimg.cc/ryWCPxxy/mypic.jpg" 
