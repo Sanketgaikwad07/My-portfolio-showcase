@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   const downloadCV = () => {
-    const cvUrl = 'https://pdf.ac/2mDZVl';
+    const cvUrl = 'https://drive.google.com/file/d/1F0fdeyQkRfxZL1ejCn6QTsLjaptuy1cb/view?usp=drivesdk';
     window.open(cvUrl, '_blank');
   };
 
