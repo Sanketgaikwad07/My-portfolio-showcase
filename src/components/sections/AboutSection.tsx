@@ -36,7 +36,12 @@ const AboutSection = () => {
             
             <div className="bg-card p-8 rounded-lg border border-border">
               <h3 className="text-2xl font-semibold mb-6 text-accent">Education</h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-medium">MSc (Scientific Computing)</h4>
+                  <p className="text-muted-foreground">Savitribai Phule Pune University</p>
+                  <p className="text-sm text-muted-foreground">Current - 2025</p>
+                </div>
                 <div>
                   <h4 className="text-lg font-medium">Bachelor's in Computer Science</h4>
                   <p className="text-muted-foreground">PVP College</p>
@@ -47,7 +52,7 @@ const AboutSection = () => {
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold mb-4 text-accent">Current Status</h3>
                 <p className="text-muted-foreground">
-                  Fresh Graduate | Ready for Impact
+                  Graduate Student | Ready for Impact
                 </p>
               </div>
             </div>
