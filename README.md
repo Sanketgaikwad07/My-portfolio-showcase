@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: my-portfolio-showcase-x5s7-dilu2ay5x-sanketgaikwad07s-projects.vercel.app
+**URL**: https://my-portfolio-showcase-x5s7-dilu2ay5x-sanketgaikwad07s-projects.vercel.app/
 
 
 
