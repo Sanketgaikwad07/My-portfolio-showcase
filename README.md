@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/8d5a8bcb-395d-4838-9eca-a0607528443c
+**URL**: my-portfolio-showcase-x5s7-dilu2ay5x-sanketgaikwad07s-projects.vercel.app
 
 
 
