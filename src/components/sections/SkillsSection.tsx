@@ -37,6 +37,16 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" className="py-20 px-4 bg-secondary/50 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)',
+        }}
+      >
+        <div className="absolute inset-0 bg-secondary/85 backdrop-blur-sm"></div>
+      </div>
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-10 -left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>

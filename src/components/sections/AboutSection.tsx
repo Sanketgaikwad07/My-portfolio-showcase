@@ -22,6 +22,16 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 px-4 relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)',
+        }}
+      >
+        <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      </div>
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
