@@ -31,7 +31,23 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className={`transition-all duration-1000 ${
+          {/* Profile Picture */}
+          <div className={`mb-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}>
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative">
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-accent/20 to-accent/40 p-1 animate-pulse">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Sanket Gaikwad"
+                  className="w-full h-full rounded-full object-cover border-2 border-accent/50"
+                />
+              </div>
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-accent/20 to-transparent"></div>
+            </div>
+          </div>
+
+          <div className={`transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent animate-gradient">
@@ -46,7 +62,7 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-1000 delay-300 ${
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center mb-12 transition-all duration-1000 delay-400 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <Button 
@@ -66,7 +82,7 @@ const Hero = () => {
             </Button>
           </div>
           
-          <div className={`flex justify-center space-x-6 mb-16 transition-all duration-1000 delay-500 ${
+          <div className={`flex justify-center space-x-6 mb-16 transition-all duration-1000 delay-600 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <a 
@@ -93,7 +109,7 @@ const Hero = () => {
             </a>
           </div>
           
-          <div className={`transition-all duration-1000 delay-700 ${
+          <div className={`transition-all duration-1000 delay-800 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             <ArrowDown 
