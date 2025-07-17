@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Picture */}
-          <div className={`mb-12 transition-all duration-1000 ${
+          <div className={`mb-16 transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative">
