@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Picture */}
-          <div className={`mb-8 transition-all duration-1000 ${
+          <div className={`mb-12 transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative">
@@ -50,7 +50,7 @@ const Hero = () => {
           <div className={`transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent animate-gradient">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent animate-gradient">
               Sanket Gaikwad
             </h1>
             <div className="text-xl md:text-2xl text-accent mb-4 font-medium">
