@@ -4,11 +4,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,31 +30,6 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    });
-  };
-
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -239,22 +213,6 @@ const ContactSection = () => {
             </Card>
           </div>
 
-          {/* Live Time and Date at the bottom */}
-          <div className={`mt-16 text-center transition-all duration-1000 delay-800 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}>
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-card/80 backdrop-blur-sm border border-border/50 rounded-full hover:border-accent/50 hover:bg-accent/5 transition-all duration-300">
-              <Clock className="w-6 h-6 text-accent" />
-              <div className="text-center">
-                <div className="text-xl font-mono text-accent font-semibold">
-                  {formatTime(currentTime)}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {formatDate(currentTime)}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
