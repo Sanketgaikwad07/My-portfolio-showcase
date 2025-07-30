@@ -1,14 +1,41 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Clock } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
@@ -31,19 +58,37 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Profile Picture - Original position but slightly lower */}
+          {/* Profile Picture with Time/Date on the right */}
           <div className={`mb-12 transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
-            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative">
-              <div className="w-full h-full rounded-full bg-gradient-to-r from-accent/20 to-accent/40 p-1 animate-pulse">
-                <img
-                  src="/lovable-uploads/33a1fb0b-15e7-495a-acaa-e709eac13c98.png"
-                  alt="Sanket Gaikwad"
-                  className="w-full h-full rounded-full object-cover border-2 border-accent/50"
-                />
+            <div className="flex items-center justify-center gap-8 md:gap-12">
+              {/* Profile Picture */}
+              <div className="w-32 h-32 md:w-40 md:h-40 relative">
+                <div className="w-full h-full rounded-full bg-gradient-to-r from-accent/20 to-accent/40 p-1 animate-pulse">
+                  <img
+                    src="/lovable-uploads/33a1fb0b-15e7-495a-acaa-e709eac13c98.png"
+                    alt="Sanket Gaikwad"
+                    className="w-full h-full rounded-full object-cover border-2 border-accent/50"
+                  />
+                </div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-accent/20 to-transparent"></div>
               </div>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-accent/20 to-transparent"></div>
+              
+              {/* Live Time and Date - Right Side */}
+              <div className="text-left">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-card/80 backdrop-blur-sm border border-border rounded-full">
+                  <Clock className="w-5 h-5 text-accent" />
+                  <div className="text-center">
+                    <div className="text-lg font-mono text-accent font-semibold">
+                      {formatTime(currentTime)}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {formatDate(currentTime)}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
