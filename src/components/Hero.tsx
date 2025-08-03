@@ -75,8 +75,8 @@ const Hero = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-accent/20 to-transparent"></div>
               </div>
               
-              {/* Live Time and Date - Right Side */}
-              <div className="text-left">
+              {/* Live Time and Date - More to the right */}
+              <div className="text-left ml-8">
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-card/80 backdrop-blur-sm border border-border rounded-full">
                   <Clock className="w-5 h-5 text-accent" />
                   <div className="text-center">
