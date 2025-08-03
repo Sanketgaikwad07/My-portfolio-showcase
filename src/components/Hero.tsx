@@ -99,7 +99,7 @@ const Hero = () => {
               Sanket Gaikwad
             </h1>
             <div className="text-xl md:text-2xl text-accent mb-4 font-medium">
-              Backend & Full-Stack Developer
+              Software Developer
             </div>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
               Crafting robust server-side solutions and seamless full-stack applications 
