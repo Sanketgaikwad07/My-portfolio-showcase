@@ -58,11 +58,11 @@ const Hero = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Profile Picture - centered and moved down */}
+          {/* Profile Picture with Time/Date on the right - moved down */}
           <div className={`mb-12 mt-8 transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
-            <div className="flex justify-center">
+            <div className="flex items-center justify-center gap-12 md:gap-16">
               {/* Profile Picture */}
               <div className="w-32 h-32 md:w-40 md:h-40 relative">
                 <div className="w-full h-full rounded-full bg-gradient-to-r from-accent/20 to-accent/40 p-1 animate-pulse">
@@ -73,6 +73,21 @@ const Hero = () => {
                   />
                 </div>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-accent/20 to-transparent"></div>
+              </div>
+              
+              {/* Live Time and Date - Right Side */}
+              <div className="text-left">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-card/80 backdrop-blur-sm border border-border rounded-full">
+                  <Clock className="w-5 h-5 text-accent" />
+                  <div className="text-center">
+                    <div className="text-lg font-mono text-accent font-semibold">
+                      {formatTime(currentTime)}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {formatDate(currentTime)}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
