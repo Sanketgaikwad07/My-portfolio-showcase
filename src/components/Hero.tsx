@@ -102,8 +102,8 @@ const Hero = () => {
               Software Developer
             </div>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Crafting robust server-side solutions and seamless full-stack applications 
-              with Java, Spring Boot, and modern web technologies.
+              Master's student in Computer Science with a strong interest in backend development.
+              Looking for an entry-level role to apply my skills and grow as a software engineer.
             </p>
           </div>
           
