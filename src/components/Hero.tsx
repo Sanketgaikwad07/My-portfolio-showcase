@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Picture with Time/Date on the right - moved down */}
-          <div className={`mb-12 mt-8 transition-all duration-1000 ${
+          <div className={`mb-12 mt-12 transition-all duration-1000 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}>
             <div className="flex items-center justify-center gap-12 md:gap-16">
