@@ -4,10 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle, Clock } from 'lucide-react';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,6 +31,14 @@ const ContactSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -40,6 +49,24 @@ const ContactSection = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
 
@@ -210,6 +237,23 @@ const ContactSection = () => {
                 </form>
               </CardContent>
             </Card>
+          </div>
+          
+          {/* Live Time and Date Section */}
+          <div className={`mt-16 flex justify-center transition-all duration-1000 delay-800 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-card/80 backdrop-blur-sm border border-border rounded-full">
+              <Clock className="w-5 h-5 text-accent" />
+              <div className="text-center">
+                <div className="text-lg font-mono text-accent font-semibold">
+                  {formatTime(currentTime)}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {formatDate(currentTime)}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
