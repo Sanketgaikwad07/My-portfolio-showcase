@@ -77,13 +77,13 @@ const Hero = () => {
               
               {/* Live Time and Date - More to the right */}
               <div className="text-left ml-16">
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-card/80 backdrop-blur-sm border border-border rounded-full">
-                  <Clock className="w-5 h-5 text-accent" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm border border-border rounded-full">
+                  <Clock className="w-4 h-4 text-accent" />
                   <div className="text-center">
-                    <div className="text-lg font-mono text-accent font-semibold">
+                    <div className="text-sm font-mono text-accent font-semibold">
                       {formatTime(currentTime)}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs text-muted-foreground">
                       {formatDate(currentTime)}
                     </div>
                   </div>
