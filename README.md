@@ -1,8 +1,7 @@
 
 
 ## Project info
-
-**URL**:https://my-portfolio-showcase-x5s7.vercel.app/
+https://my-portfolio-showcase-uofa.vercel.app/
 
 
 
