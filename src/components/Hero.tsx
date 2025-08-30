@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Github, Linkedin, Mail, Clock } from 'lucide-react';
+import ThreeDWorkspace from '@/components/ThreeDWorkspace';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,6 +55,11 @@ const Hero = () => {
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-accent/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+
+      {/* 3D Workspace Scene */}
+      <div className="absolute inset-0 opacity-30 hover:opacity-50 transition-opacity duration-700">
+        <ThreeDWorkspace />
       </div>
 
       <div className="container mx-auto relative z-10">
